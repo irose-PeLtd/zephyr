@@ -13,6 +13,7 @@
 # You can pass your manifest repositories to west init when creating a
 # new Zephyr installation. See the west documentation for more
 # information.
+#https://docs.zephyrproject.org/latest/develop/west/manifest.html#multiple-repository-model
 
 manifest:
   defaults:
@@ -21,6 +22,10 @@ manifest:
   remotes:
     - name: upstream
       url-base: https://github.com/zephyrproject-rtos
+    - name: zephyr
+      url-base: https://github.com/irose-PeLtd
+    - name: NXP_Hal
+      url-base: https://github.com/irose-PeLtd
 
   #
   # Please add items below based on alphabetical order
@@ -93,6 +98,7 @@ manifest:
       groups:
         - hal
     - name: hal_nxp
+      remote: NXP_Hal
       revision: b4d43b80ee33d58683072f117c28ca669b0a56b7
       path: modules/hal/nxp
       groups:
@@ -251,5 +257,6 @@ manifest:
 
   self:
     path: zephyr
+    remote: zephyr
     west-commands: scripts/west-commands.yml
     import: submanifests
