@@ -39,8 +39,24 @@ typedef uint32_t pinctrl_soc_pin_t;
 	IOCON_PIO_MODE_MASK | IOCON_PIO_FUNC_MASK)
 
 /* Mask for analog type pin configuration register */
+#ifdef IOCON_PIO_ASW0_MASK
+/* Mask for analog type pin configuration register */
+#define Z_PINCTRL_IOCON_A0_PIN_MASK						\
+	(Z_PINCTRL_IOCON_D_PIN_MASK | IOCON_PIO_ASW0_MASK)
+
+#endif
+
+#ifdef IOCON_PIO_ASW1_MASK
+/* Mask for analog type pin configuration register */
+#define Z_PINCTRL_IOCON_A1_PIN_MASK						\
+	(Z_PINCTRL_IOCON_D_PIN_MASK | IOCON_PIO_ASW1_MASK)
+#endif
+
+#ifdef IOCON_PIO_ASW_MASK
+/* Mask for analog type pin configuration register */
 #define Z_PINCTRL_IOCON_A_PIN_MASK						\
 	(Z_PINCTRL_IOCON_D_PIN_MASK | IOCON_PIO_ASW_MASK)
+#endif
 
 /* Mask for i2c type pin configuration register */
 #define Z_PINCTRL_IOCON_I_PIN_MASK (Z_PINCTRL_IOCON_D_PIN_MASK |		\
